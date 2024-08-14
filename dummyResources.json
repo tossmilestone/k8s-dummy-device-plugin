@@ -1,18 +1,23 @@
 [
-    {
-        "name": "dev_1",
-        "state": "Up"
-    },
-    {
-        "name": "dev_2",
-        "state": "Up"
-    },
-    {
-        "name": "dev_3",
-        "state": "Up"
-    },
-    {
-        "name": "dev_4",
-        "state": "Up"
-    }
+  {
+    "name": "nvidia.com/gpu",
+    "resources": [
+      {
+        "deviceID": "dev_1",
+        "health": "Healthy"
+      },
+      {
+        "deviceID": "dev_2",
+        "health": "Healthy"
+      },
+      {
+        "deviceID": "dev_3",
+        "health": "Healthy"
+      },
+      {
+        "deviceID": "dev_4",
+        "health": "Healthy"
+      }
+    ]
+  }
 ]

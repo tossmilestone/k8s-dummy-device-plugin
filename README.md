@@ -6,6 +6,39 @@ This is a plugin that's used for testing and exploring [Kubernetes Device Plugin
 
 In essence, it works as a kind of echo device. One specifies the (albeit pretend) devices in a JSON file, and the plugin operates on those, and allocates the devices to containers that request them -- it does this by setting those devices into environment variables in those containers.
 
+### Update 14 August 2024
+Support faking multiple devices in config.
+
+Add devices in `dummyResources.json` as following:
+```json
+[
+  {
+    "name": "nvidia.com/gpu",
+    "resources": [
+      {
+        "deviceID": "dev_1",
+        "health": "Healthy"
+      },
+      {
+        "deviceID": "dev_2",
+        "health": "Healthy"
+      },
+      {
+        "deviceID": "dev_3",
+        "health": "Healthy"
+      },
+      {
+        "deviceID": "dev_4",
+        "health": "Healthy"
+      }
+    ]
+  }
+]
+```
+Every item in the list represents a device with resources.
+
+The `name` is the key of the device, `resources` is the resource list of the device.
+
 ### Update 27 January 2021
 creates `nvidia.com/gpu` device for testing. 
 `examples/daemonset.yml` contains example deployment with config map
